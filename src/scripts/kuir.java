@@ -8,7 +8,7 @@ import javax.xml.transform.TransformerException;
 
 public class kuir {
 	
-	public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException {
+	public static void main(String[] args) throws IOException, ParserConfigurationException, TransformerException, ClassNotFoundException {
 		// TODO Auto-generated method stub
 		
 	
@@ -29,6 +29,10 @@ public class kuir {
 			ix.makepost();
 
 		}	
+		else if(command.equals("-s")){
+		searcher sr= new searcher(path, args[3]);
+		sr.CalcSim();
+		}
 		
 				
 	}

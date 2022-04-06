@@ -1,7 +1,11 @@
 package scripts;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -33,7 +37,7 @@ public class indexer {
         int size=docelement.size();
         
 
-         //df make
+         //make df
          HashMap<String,Integer>dfmap=new HashMap<>();
          for(int k=0; k<size; k++){
              String bodyData= bodyelement.get(k).text();
@@ -99,7 +103,13 @@ public class indexer {
         	System.out.println(sr+"->"+finalmap.get(sr));
         }
        
+        FileOutputStream fio=new FileOutputStream("./index.post");
+        ObjectOutputStream obj=new ObjectOutputStream(fio);
+        obj.writeObject(finalmap);
+        obj.close();
 
+
+        
     }
     
     
