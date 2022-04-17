@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Launch kuir",
+            "request": "launch",
+            "mainClass": "scripts.kuir",
+            "projectName": "opensource_class",
+            //"args": ["-i" , "./index.xml"]
+            "args": ["-s" , "./index.post" , "-q" , "라면과 면 국물 , 파스타 , 초밥"]
+
+        }
+    ]
+}

@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -25,6 +24,21 @@ public class searcher {
         this.path=path;
         this.query=query;
         
+    }
+
+    public double mulitsize(ArrayList<Double>quvec,double resvec[] ){
+        double first=0;
+        double second=0;
+
+        for(double w1:quvec){
+            first+=w1*w1;
+        }
+        for(double w2:resvec){
+            first+=w2*w2;
+        }
+
+        return Math.sqrt(first)*Math.sqrt(second);
+
     }
     
     public void CalcSim() throws IOException, ClassNotFoundException{
@@ -76,41 +90,35 @@ public class searcher {
                 sum+=quvec.get(j)*resvec[i][j];
             }
             sort[i]=sum;
-        }        
+        } 
+
+        double[] finalres= new double[idsize];
+
+        for(int i=0; i<idsize; i++){
+            double store=mulitsize(quvec,resvec[i]);
+
+            if(store==0){
+                finalres[i]=0;
+            }
+            else{
+                finalres[i]=sort[i]/store;
+            }
+            
+        }
+        
 
         for(int i=0; i<3; i++){
             int max=0;
-            for(int j=0; j<sort.length; j++){
-                if(sort[j]>sort[max]){
+            for(int j=0; j<finalres.length; j++){
+                if(finalres[j]>finalres[max]){
                     max=j;
                 }
             }
-            System.out.println("문서:"+titlele.get(max).text()+" "+"유사도:"+sort[max]);
-            sort[max]=-1;
-        }
-
-
-
-        
-
-        
-
-
-        
-        
-
-
-
-
-        
-
-        
-
-
-
-
+            System.out.println("문서:"+titlele.get(max).text()+" "+"유사도:"+finalres[max]);
+            finalres[max]=-1;
+        }      
 
     }
-
+    
 
 }
