@@ -34,7 +34,7 @@ public class searcher {
             first+=w1*w1;
         }
         for(double w2:resvec){
-            first+=w2*w2;
+            second+=w2*w2;
         }
 
         return Math.sqrt(first)*Math.sqrt(second);

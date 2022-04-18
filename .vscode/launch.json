@@ -12,7 +12,7 @@
             "mainClass": "scripts.kuir",
             "projectName": "opensource_class",
             //"args": ["-i" , "./index.xml"]
-            "args": ["-s" , "./index.post" , "-q" , "라면과 면 국물 , 파스타 , 초밥"]
+            "args": ["-s" , "./index.post" , "-q" , "떡은 주로 멥쌀이나 찹쌀, 또는 다른 곡식을 쪄서 찧거나 가루 내어 쪄서 빚어 만든 음식을 통칭하는 말이다."]
 
         }
     ]
