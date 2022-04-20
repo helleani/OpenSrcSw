@@ -85,7 +85,7 @@ public class searcher {
         double[] sort= new double[idsize];
         for(int i=0; i<idsize; i++){
             double sum=0;
-            //inner product
+            //Inner product
             for(int j=0; j<keysize; j++){
                 sum+=quvec.get(j)*resvec[i][j];
             }
