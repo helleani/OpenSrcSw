@@ -94,7 +94,7 @@ public class searcher {
 
         double[] finalres= new double[idsize];
 
-        //calcism
+        //calc
         for(int i=0; i<idsize; i++){
             double store=mulitsize(quvec,resvec[i]);
 
