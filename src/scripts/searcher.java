@@ -41,6 +41,7 @@ public class searcher {
 
     }
     
+    //calc
     public void CalcSim() throws IOException, ClassNotFoundException{
         
         FileInputStream fs = new FileInputStream(path);
